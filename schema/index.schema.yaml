@@ -1,0 +1,80 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+
+type: array
+
+items:
+  type: object
+
+  properties:
+    uuid:
+      description: >
+        Unique identifier for the app.
+      type: string
+      format: uuid
+
+    name:
+      description: >
+        The name of the app.
+      type: string
+
+    presets:
+      description: >
+        Optional list of presets, each with a source and sourceType. Both source and sourceType are required if presets are specified.
+      type: array
+      items:
+        type: object
+        properties:
+          source:
+            type: string
+          sourceType:
+            type: string
+        required:
+          - source
+          - sourceType
+
+    rules:
+      description: >
+        Optional list of rules, each with a name. Finds only YAML files in the rules directory.
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+        required:
+          - name
+
+    dashboards:
+      description: >
+        Optional list of dashboards, each with a name. Finds only YAML files in the dashboards directory.
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+        required:
+          - name
+
+    notebooks:
+      description: >
+        Optional list of notebooks, each with a name. Finds only IPYNB files in the notebooks directory.
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+        required:
+          - name
+
+  required:
+    - uuid
+    - name
+
+  anyOf:
+    - required: ["presets"]
+    - required: ["rules"]
+    - required: ["dashboards"]
+    - required: ["notebooks"]
+

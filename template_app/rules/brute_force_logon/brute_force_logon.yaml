@@ -1,0 +1,4 @@
+name: "suspicious_user_logon"
+description: "Detects suspicious user logon patterns"
+rule: {}
+

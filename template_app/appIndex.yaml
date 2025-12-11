@@ -1,0 +1,37 @@
+uuid: "550e8400-e29b-41d4-a716-446655440000"  # UUID
+name: "My App"  # required string
+iconURL: "https://raw.githubusercontent.com/antimatterhq/app/appIcon.png" # required url string
+description: "My app with lots of content."  # required string
+author: "Antimatter"  # required string
+authorEmail: "info@antimatter.io"  # required email string
+
+datasets:  # optional list of datasets (remote URLs or local files)
+  local:  # local datasets (git commit provides integrity, checksum optional)
+    - path: "iocs/iocs.csv"
+      format: "csv"
+    - path: "hrdata/hrdata.json"
+      format: "json"
+
+presets:  # optional list of presets (each with a source and sourceType) (both required if presets specified)
+  - source: "akamai"
+    sourceType: "waf"
+
+rules:  # optional list of rules (each with a name) finds only yaml files in the rules directory
+  - name: "detect_dns_tunnelling"
+  - name: "suspicious_user_logon"
+
+dashboards:  # optional list of dashboards (each with a name) finds only yaml files in the dashboards directory
+  - name: "authentication"
+  - name: "account_management"
+
+notebooks:  # optional list of notebooks (each with a name) finds only ipynb files in the notebooks directory
+  - name: "data_analysis"
+  - name: "data_visualization"
+
+tags:  # optional list of tags
+  - "akamai"
+  - "security"
+
+license: "MIT"  # optional string
+licenseUrl: "https://opensource.org/licenses/MIT"  # optional url string
+

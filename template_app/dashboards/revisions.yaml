@@ -1,0 +1,9 @@
+dashboards:
+  - name: "authentication"
+    version: 1
+    contentHash: "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27aee"
+  - name: "user_management"
+    version: 1
+    contentHash: "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
+    versionNote: "Updated user management dashboard with new widgets"
+

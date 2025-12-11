@@ -1,0 +1,38 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+
+type: object
+
+properties:
+  name:
+    description: >
+      The name of the dashboard. Dashboard names must be unique.
+    type: string
+
+  author:
+    description: >
+      The person or organization that authored this dashboard.
+    type: string
+
+  authorEmail:
+    description: >
+      The email address of the dashboard author.
+    type: string
+    format: email
+
+  title:
+    description: >
+      The display title for the dashboard.
+    type: string
+
+  dashboardJson:
+    description: >
+      The dashboard JSON definition as a multiline string. This should contain the complete dashboard
+      configuration including datasets, widgets, and other dashboard components.
+    type: string
+
+required:
+  - name
+  - author
+  - authorEmail
+  - title
+  - dashboardJson

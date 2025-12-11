@@ -1,0 +1,8 @@
+rules:
+  - name: "detect_dns_tunnelling"
+    version: 3
+    contentHash: "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27a34"
+    versionNote: "Added new rule to detect DNS tunnelling"
+  - name: "suspicious_user_logon"
+    version: 1
+    contentHash: "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae2"

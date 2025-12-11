@@ -1,0 +1,4 @@
+name: "detect_dns_tunnelling"
+description: "Detects DNS tunnelling attempts"
+rule: {}
+

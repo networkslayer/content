@@ -1,0 +1,6 @@
+source: "akamai"
+sourceType: "waf"
+name: "Akamai WAF Preset"
+description: "Preset configuration for Akamai WAF"
+configuration: {}
+

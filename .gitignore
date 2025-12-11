@@ -1,0 +1,14 @@
+# Directories
+design/
+lakewatch/
+content/
+.venv/
+
+.DS_Store
+.vscode/
+__pycache__/
+
+.python-version
+
+
+
