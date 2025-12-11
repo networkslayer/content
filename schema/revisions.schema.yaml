@@ -5,7 +5,7 @@ type: object
 properties:
   rules:
     description: >
-      Optional list of rules. Each rule has a name, version, and contentHash (all required) and an optional revision note.
+      Optional list of rules. Each rule has a name, latestVersion, and contentHash (all required) and an optional revision note.
     type: array
     items:
       type: object
@@ -14,9 +14,9 @@ properties:
           description: >
             Name of the rule (without .yaml extension).
           type: string
-        version:
+        latestVersion:
           description: >
-            Version number of the rule.
+            Latest version number of the rule.
           type: integer
         contentHash:
           description: >
@@ -28,12 +28,12 @@ properties:
           type: string
       required:
         - name
-        - version
+        - latestVersion
         - contentHash
 
   dashboards:
     description: >
-      Optional list of dashboards. Each dashboard has a name, version, and contentHash (all required) and an optional revision note.
+      Optional list of dashboards. Each dashboard has a name, latestVersion, and contentHash (all required) and an optional revision note.
     type: array
     items:
       type: object
@@ -42,9 +42,9 @@ properties:
           description: >
             Name of the dashboard (without .yaml extension).
           type: string
-        version:
+        latestVersion:
           description: >
-            Version number of the dashboard.
+            Latest version number of the dashboard.
           type: integer
         contentHash:
           description: >
@@ -56,12 +56,12 @@ properties:
           type: string
       required:
         - name
-        - version
+        - latestVersion
         - contentHash
 
   notebooks:
     description: >
-      Optional list of notebooks. Each notebook has a name, version, and contentHash (all required) and an optional revision note.
+      Optional list of notebooks. Each notebook has a name, latestVersion, and contentHash (all required) and an optional revision note.
     type: array
     items:
       type: object
@@ -70,9 +70,9 @@ properties:
           description: >
             Name of the notebook (without .ipynb extension).
           type: string
-        version:
+        latestVersion:
           description: >
-            Version number of the notebook.
+            Latest version number of the notebook.
           type: integer
         contentHash:
           description: >
@@ -84,12 +84,12 @@ properties:
           type: string
       required:
         - name
-        - version
+        - latestVersion
         - contentHash
 
   presets:
     description: >
-      Optional list of presets. Each preset has a source, sourceType, version, and contentHash (all required) and an optional revision note.
+      Optional list of presets. Each preset has a source, sourceType, latestVersion, and contentHash (all required) and an optional revision note.
     type: array
     items:
       type: object
@@ -102,9 +102,9 @@ properties:
           description: >
             Type of the preset source.
           type: string
-        version:
+        latestVersion:
           description: >
-            Version number of the preset.
+            Latest version number of the preset.
           type: integer
         contentHash:
           description: >
@@ -117,7 +117,7 @@ properties:
       required:
         - source
         - sourceType
-        - version
+        - latestVersion
         - contentHash
 
 anyOf:
