@@ -6,7 +6,7 @@
 
   rules:
     - name: "detect_dns_tunnelling"
-    - name: "suspicious_user_logon"
+    - name: "brute_force_logon"
 
   dashboards:
     - name: "authentication"
