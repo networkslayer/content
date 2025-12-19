@@ -1,12 +1,12 @@
 - uuid: "550e8400-e29b-41d4-a716-446655440000"
-  name: "Template App"
+  name: "template_app"
   presets:
     - source: "akamai"
       sourceType: "waf"
 
   rules:
     - name: "detect_dns_tunnelling"
-    - name: "suspicious_user_logon"
+    - name: "brute_force_logon"
 
   dashboards:
     - name: "authentication"
