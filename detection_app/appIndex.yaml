@@ -1,5 +1,5 @@
 uuid: "550e8400-e29b-41d4-a716-446655440000"  # UUID
-name: "Template App"  # required string
+name: "Detection App"  # required string
 iconURL: "https://raw.githubusercontent.com/antimatterhq/app/appIcon.png" # required url string
 description: "My app with lots of content."  # required string
 author: "Antimatter"  # required string
@@ -11,14 +11,18 @@ datasets:  # optional list of datasets (remote URLs or local files)
       format: "csv"
     - path: "hrdata/hrdata.json"
       format: "json"
+  remote:
+    - path: "https://s3.amazonaws.com/crowdstrike-falcon-threat-intelligence/threat-intel-feed/falcon-threat-intel-feed.json"
+      format: "json"
+      sha256sum: "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27a34"
 
 presets:  # optional list of presets (each with a source and sourceType) (both required if presets specified)
-  - source: "akamai"
-    sourceType: "waf"
+  - source: "crowdstrike"
+    sourceType: "falcon"
 
 rules:  # optional list of rules (each with a name) finds only yaml files in the rules directory
-  - name: "detect_dns_tunnelling"
-  - name: "suspicious_user_logon"
+  - name: "detection1"
+  - name: "detection2"
 
 dashboards:  # optional list of dashboards (each with a name) finds only yaml files in the dashboards directory
   - name: "authentication"
@@ -29,7 +33,7 @@ notebooks:  # optional list of notebooks (each with a name) finds only ipynb fil
   - name: "data_visualization"
 
 tags:  # optional list of tags
-  - "akamai"
+  - "detection"
   - "security"
 
 license: "MIT"  # optional string

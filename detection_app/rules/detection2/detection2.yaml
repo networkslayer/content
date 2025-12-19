@@ -1,0 +1,54 @@
+name: "detect_dns_tunnelling"
+description: "Detects DNS tunnelling attempts"
+rule: |
+    {
+      "spec": {
+        "schedule": {
+          "continuous": false,
+          "atLeastEvery": "1d",
+          "computeGroup": "",
+          "enabled": true
+        },
+        "input": {
+          "batch": {
+            "sql": "-- Unusual GetAccountPublicAcccessBlock call from external IP\n-- for users not in the allowed list\n-- not internal IPs\n-- Example reconnaissance pre-attack\nSELECT\n  time,\n  message,\n  metadata.event_code,\n  api.operation,\n  status,\n  cloud.account.uid AS account,\n  cloud.region,\n  actor.app_name,\n  src_endpoint.ip AS source_ip\nFROM\n  dsl.gold.datastore_activity\nWHERE\n  api.operation = 'GetAccountPublicAccessBlock'\n  AND status = 'Success'\n  AND time BETWEEN '2025-06-13T06:38:53.000+00:00' AND '2025-06-13T06:59:53.000+00:00'\n  AND (\n    actor.user.name NOT IN ('compliance-bot', 'admin-monitor')\n    AND src_endpoint.ip NOT RLIKE '^10\\\\.|^192\\\\.168\\\\.|^172\\\\.(1[6-9]|2[0-9]|3[0-1])\\\\.'\n  )"
+          }
+        },
+        "output": {
+          "summary": "Unusual GetAccountPublicAccessBlock from IP: {source_ip}"
+        },
+        "observables": [
+          {
+            "value": "{source_ip}",
+            "kind": "IP Address",
+            "relationship": "SrcIP",
+            "risk": {
+              "impact": "10",
+              "confidence": "3"
+            }
+          }
+        ],
+        "metadata": {
+          "objective": "May indicate early reconnaissance activity in the pre-attack phase ahead of potential S3 exposure.",
+          "severity": "Medium",
+          "fidelity": "Investigative",
+          "category": "Policy",
+          "mitre": [
+            {
+              "taxonomy": "",
+              "tactic": "",
+              "technique": "",
+              "subTechnique": "",
+              "techniqueId": "",
+              "subTechniqueId": ""
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "name": "Unusual use of GetAccountPublicAccessBlock",
+        "comment": "Detect possible early s3 exposure",
+        "clientOfOrigin": "asl-web/74fef46fdaa9a8d78eece6ac9b6f920e74963665"
+      }
+    }
+
