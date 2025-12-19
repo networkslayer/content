@@ -15,4 +15,22 @@
   notebooks:
     - name: "data_analysis"
     - name: "data_visualization"
+
+- uuid: "550e8400-e29b-41d4-a716-446655440001"
+  name: "detection_app"
+  presets:
+    - source: "crowdstrike"
+      sourceType: "falcon"
+
+  rules:
+    - name: "detection1"
+    - name: "detection2"
+
+  dashboards:
+    - name: "authentication"
+    - name: "account_management"
+
+  notebooks:
+    - name: "data_analysis"
+    - name: "data_visualization"
   
