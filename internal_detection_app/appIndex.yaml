@@ -1,7 +1,7 @@
-uuid: "550e8400-e29b-41d4-a716-446655440000"  # UUID
-name: "teplate_app"  # required string
+uuid: "550e8400-e29b-41d4-a716-446655440022"  # UUID
+name: "My Internal Detection App"  # required string
 iconURL: "https://raw.githubusercontent.com/antimatterhq/app/appIcon.png" # required url string
-description: "My app with lots of content."  # required string
+description: "My internal detection app with lots of content."  # required string
 author: "Antimatter"  # required string
 authorEmail: "info@antimatter.io"  # required email string
 
@@ -13,7 +13,7 @@ datasets:  # optional list of datasets (remote URLs or local files)
       format: "json"
 
 presets:  # optional list of presets (each with a source and sourceType) (both required if presets specified)
-  - source: "akamai"
+  - source: "akamai_internal"
     sourceType: "waf"
 
 rules:  # optional list of rules (each with a name) finds only yaml files in the rules directory

@@ -1,0 +1,18 @@
+- uuid: "550e8400-e29b-41d4-a716-446655440022"
+  name: "internal_detection_app"
+  presets:
+    - source: "akamai_internal"
+      sourceType: "waf"
+
+  rules:
+    - name: "detect_dns_tunnelling"
+    - name: "brute_force_logon"
+
+  dashboards:
+    - name: "authentication"
+    - name: "account_management"
+
+  notebooks:
+    - name: "data_analysis"
+    - name: "data_visualization"
+  
