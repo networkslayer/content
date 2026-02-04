@@ -2,5 +2,5 @@ presets:
   - source: "crowdstrike"
     sourceType: "falcon"
     latestVersion: 1
-    contentHash: "c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e519"
+    contentHash: "59f78e55fc0fbfa1e36a7894dedb461d4c26df0d970508efc1e186c102b54c7d"
 
